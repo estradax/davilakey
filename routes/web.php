@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,17 +23,13 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/shop', function () {
-    return view('shop');
-})->name('shop');
-
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/shop/{id}', function () {
-    return view('shop-single');
-})->name('shop.show');
+Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+
+Route::get('/shop/{robot}', [ShopController::class, 'show'])->name('shop.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
