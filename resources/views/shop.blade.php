@@ -74,15 +74,11 @@
                 </div>
                 <div div="row">
                     <ul class="pagination pagination-lg justify-content-end">
-                        <li class="page-item disabled">
-                            <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
+                        @for($page = 1; $page < $robots->lastPage() + 1; $page++)
+                        <li @class(['page-item', 'disabled' => $robots->currentPage() === $page])>
+                            <a @class(['page-link', 'rounded-0', 'mr-3', 'shadow-sm', 'border-top-0', 'border-left-0', 'active' => $robots->currentPage() === $page]) href="{{ $robots->url($page) }}" tabindex="-1">{{ $page }}</a>
                         </li>
-                        <li class="page-item">
-                            <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
-                        </li>
+                        @endfor
                     </ul>
                 </div>
             </div>
