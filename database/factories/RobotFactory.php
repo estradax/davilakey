@@ -19,7 +19,8 @@ class RobotFactory extends Factory
         return [
             'name' => fake()->name(),
             'price' => fake()->numberBetween(100, 1000),
-            'description' => fake()->text(30)
+            'description' => fake()->text(30),
+            'image_url' => fake()->imageUrl()
         ];
     }
 }
