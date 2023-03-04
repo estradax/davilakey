@@ -3,7 +3,7 @@
 @section('shell.content')
 
     <!-- Open Content -->
-    <section class="bg-light">
+    <section x-data="shopSingle" class="bg-light">
         <div class="container pb-5">
             <div class="row">
                 <div class="col-lg-5 mt-5">
@@ -179,7 +179,7 @@
                                         <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Buy</button>
                                     </div>
                                     <div class="col d-grid">
-                                        <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
+                                        <button type="button" @click="addToCart" class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
                                     </div>
                                 </div>
                             </form>
@@ -664,6 +664,26 @@
         </div>
     </section>
     <!-- End Article -->
+
+    <script>
+        const shopSingle = {
+            id: @json($robot->id),
+            addToCart() {
+                let ids;
+                try {
+                    const savedIds = JSON.parse(localStorage.getItem('robot_ids'));
+                    // FIXME: Check if saved ids is not an array of number
+                    if (!savedIds) ids = [];
+                    else ids = savedIds;
+                } catch (e) {
+                    ids = [];
+                }
+
+                ids.push(this.id);
+                localStorage.setItem('robot_ids', JSON.stringify(ids));
+            }
+        }
+    </script>
 
 
 @endsection
