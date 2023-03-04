@@ -39,14 +39,21 @@
 <script>
     const cart = {
         robots: [],
-        async init() {
-            const ids = localStorage.getItem('robot_ids');
-            if (!ids) return;
-
+        async fetchCartDetail(ids) {
             const params = { ids };
             const resp = await axios.get('/api/cart-detail', { params });
 
-            this.robots = resp.data;
+            return resp.data;
+        },
+        async init() {
+            this.$watch('$store.cart.items', async () => {
+                this.robots = await this.fetchCartDetail(JSON.stringify(Alpine.store('cart').items));
+            });
+
+            const ids = localStorage.getItem('robot_ids');
+            if (!ids) return;
+
+            this.robots = await this.fetchCartDetail(ids);
         }
     }
 </script>

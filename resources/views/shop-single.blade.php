@@ -669,18 +669,17 @@
         const shopSingle = {
             id: @json($robot->id),
             addToCart() {
-                let ids;
                 try {
                     const savedIds = JSON.parse(localStorage.getItem('robot_ids'));
                     // FIXME: Check if saved ids is not an array of number
-                    if (!savedIds) ids = [];
-                    else ids = savedIds;
+                    if (!savedIds) Alpine.store('cart').setItems([]);
+                    else Alpine.store('cart').setItems(savedIds);
                 } catch (e) {
-                    ids = [];
+                    Alpine.store('cart').setItems([]);
                 }
 
-                ids.push(this.id);
-                localStorage.setItem('robot_ids', JSON.stringify(ids));
+                Alpine.store('cart').add(this.id);
+                localStorage.setItem('robot_ids', JSON.stringify(Alpine.store('cart').items));
             }
         }
     </script>
