@@ -1,7 +1,7 @@
 <div class="col-md-4">
     <div class="card mb-4 product-wap rounded-0">
         <div class="card rounded-0">
-            <img class="card-img rounded-0 img-fluid" src="{{ $robot->image_url }}">
+            <img style="width: 600px !important; height: 400px !important;" class="card-img rounded-0 img-fluid" src="{{ $robot->image_url }}">
             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                 <ul class="list-unstyled">
                     <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
