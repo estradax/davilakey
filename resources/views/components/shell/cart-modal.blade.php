@@ -23,7 +23,7 @@
                             <div class="card-body" style="height: 100% !important;">
                                 <h1 class="h2" x-text="robot.name"></h1>
                                 <p class="h3 py-2" x-text="robot.price"></p>
-                                <button class="btn btn-danger">Cancel</button>
+                                <button class="btn btn-danger" @click="cancelRobot(robot.id)">Cancel</button>
                             </div>
                         </div>
                     </div>
@@ -56,6 +56,13 @@
 
             Alpine.store('cart').setItems(JSON.parse(ids));
             this.robots = await this.fetchCartDetail(ids);
+        },
+        cancelRobot(id) {
+            Alpine.store('cart').delete(id);
+
+            const ids = Alpine.store('cart').items;
+
+            localStorage.setItem('robot_ids', JSON.stringify(ids));
         }
     }
 </script>
