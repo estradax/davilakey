@@ -10,10 +10,10 @@
             <ul style="list-style-type: none; margin: 0; padding: 0">
                 <template x-for="robot in robots">
                 <li>
-            <div class="container pb-5" style="height: 180px !important;">
-                <div class="row" style="height: 100% !important;">
+            <div class="container pb-5" style="height: auto !important;">
+                <div class="row" style="height: 100% !important; align-items: center;">
                     <div class="col-lg-2" style="height: 100% !important;">
-                        <div class="card mb-3" style="height: 100% !important;">
+                        <div class="card" style="height: 100% !important;">
                             <img style="height: 100% !important;" class="card-img img-fluid" x-bind:src="robot.image_url" alt="Card image cap" id="product-detail">
                         </div>
                     </div>
@@ -23,6 +23,7 @@
                             <div class="card-body" style="height: 100% !important;">
                                 <h1 class="h2" x-text="robot.name"></h1>
                                 <p class="h3 py-2" x-text="robot.price"></p>
+                                <button class="btn btn-danger">Cancel</button>
                             </div>
                         </div>
                     </div>
