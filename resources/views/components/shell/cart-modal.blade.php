@@ -53,6 +53,7 @@
             const ids = localStorage.getItem('robot_ids');
             if (!ids) return;
 
+            Alpine.store('cart').setItems(JSON.parse(ids));
             this.robots = await this.fetchCartDetail(ids);
         }
     }
