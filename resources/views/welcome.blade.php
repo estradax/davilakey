@@ -15,7 +15,7 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="./assets/img/banner_img_01.jpg" alt="">
+                            <img class="img-fluid" src="./assets/img/robot2.jpg" style="width:200px;height:200px;"alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
@@ -42,7 +42,7 @@
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
                                 <h1 class="h1">Proident occaecat</h1>
-                                <h3 class="h2">Aliquip ex ea commodo consequat</h3>
+                                <h3 class="h2">Selamat datang di website penjualan Robot pertama di indonesia</h3>
                                 <p>
                                     You are permitted to use this Zay CSS template for your commercial websites.
                                     You are <strong>not permitted</strong> to re-distribute the template ZIP file in any kind of template collection websites.
