@@ -25,6 +25,8 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/slick.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/slick-theme.css">
 
+    <link rel="stylesheet" href="/assets/intl-tel-input/css/intlTelInput.min.css">
+
 </head>
 
 <body>
@@ -44,7 +46,12 @@
     <script src="/assets/js/custom.js"></script>
 
     <script src="/assets/js/slick.min.js"></script>
+    <script src="/assets/intl-tel-input/js/intlTelInput-jquery.min.js"></script>
+    <script src="/assets/intl-tel-input/js/data.min.js"></script>
+    <script src="/assets/intl-tel-input/js/utils.js"></script>
     <script>
+        $('#telp-input').intlTelInput();
+
         $('#carousel-related-product').slick({
             infinite: true,
             arrows: false,
