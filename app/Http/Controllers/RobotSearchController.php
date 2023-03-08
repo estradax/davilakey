@@ -18,7 +18,9 @@ class RobotSearchController extends Controller
             return response()->json([]);
         }
 
-        $robots = Robot::where('name', 'LIKE', '%'.$query.'%')->orWhere('description', 'LIKE', '%'.$query.'%')->get();
+        $robots = Robot::where('name', 'LIKE', '%'.$query.'%')
+            ->orWhere('description', 'LIKE', '%'.$query.'%')
+            ->take(10)->get();
 
         return response()->json($robots);
     }
