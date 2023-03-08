@@ -22,6 +22,10 @@ class RobotSearchController extends Controller
             ->orWhere('description', 'LIKE', '%'.$query.'%')
             ->take(10)->get();
 
+        $robots->map(function (Robot $robot) {
+            $robot['detail_link'] = route('shop.show', $robot->id);
+        });
+
         return response()->json($robots);
     }
 }
