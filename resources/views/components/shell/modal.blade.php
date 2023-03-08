@@ -25,7 +25,10 @@
                                 <div class="col-lg-7" style="height: 100% !important;">
                                     <div class="card" style="height: 100% !important;">
                                         <div class="card-body" style="height: 100% !important;">
-                                            <h1 class="h2" x-text="robot.name"></h1>
+                                            <a :href="robot.detail_link">
+                                                <h1 class="h2" x-text="robot.name"></h1>
+                                            </a>
+                                            <p x-text="robot.description"></p>
                                             <p class="h3 py-2" x-text="robot.price"></p>
                                         </div>
                                     </div>
@@ -48,6 +51,7 @@
                 q: this.query
             };
             const resp = await axios.get('/api/search', { params });
+            console.log(resp);
 
             this.robots = resp.data;
         }
