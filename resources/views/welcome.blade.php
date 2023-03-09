@@ -19,10 +19,10 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
-                                <h1 class="h1 text-success"><b>Pajero</b> eCommerce</h1>
-                                <h3 class="h2">Simple and Perfect eCommerce For Electronic Robot</h3>
+                                <h1 class="h1 text-success"><b>PajeRobot</b> Sites</h1>
+                                <h3 class="h2">Website pertama di indonesia yang menyediakan segala macam kebutuhan robotic</h3>
                                 <p>
-                                    Pajero Shop is an website for buy Robot and Information with latest version of Robotic International News.
+                                    PajeRobot website yang berisi tentang informasi robotic,jual-beli,penyewaan robot, dan lain-lain tentang robot.
 
                                 </p>
                             </div>
@@ -38,11 +38,12 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
-                                <h1 class="h1">Proident occaecat</h1>
-                                <h3 class="h2">Selamat datang di website penjualan Robot pertama di indonesia</h3>
+                                <h2>KALIAN HARUS TAU!!</h2>
+                                <h3 class="h2">Informasi</h3>
                                 <p>
-                                    You are permitted to use this Zay CSS template for your commercial websites.
-                                    You are <strong>not permitted</strong> to re-distribute the template ZIP file in any kind of template collection websites.
+                                Robot adalah mesin yang dapat melakukan tindakan kompleks secara otomatis.  Mereka umumnya membutuhkan tiga elemen: sensor seperti kamera, lidar, atau mikrofon;  aktuator seperti motor, piston atau otot buatan, dan pengontrol.
+
+Robot mungkin dikendalikan dari jarak jauh oleh manusia, tetapi seringkali sebagian atau seluruhnya dikendalikan oleh komputer, menjadikannya otonom.
                                 </p>
                             </div>
                         </div>
@@ -57,11 +58,11 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
-                                <h1 class="h1">Repr in voluptate</h1>
-                                <h3 class="h2">Ullamco laboris nisi ut </h3>
+                                <h1 class="h1">Jual-Beli dan Sewa Robot</h1>
+                                <h3 class="h2">Kami Menyediakan Robot Dalam Berbagai Kebutuhan Mulai Dari Robot Industri,Robot Elektrik dan masih banyak lagi. </h3>
                                 <p>
-                                    We bring you 100% free CSS templates for your websites.
-                                    If you wish to support TemplateMo, please make a small contribution via PayPal or tell your friends about our website. Thank you.
+                                    Di website ini kalian bisa menemukan jenis robot yang kalian inginkan dan butuhkan.
+                                    Kami juga menjual sparepart robot agar mempermudah customer mencari sparepart yang belum tersedia.
                                 </p>
                             </div>
                         </div>
