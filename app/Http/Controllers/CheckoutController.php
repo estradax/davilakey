@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Robot;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
@@ -14,15 +15,18 @@ class CheckoutController extends Controller
             ]);
         }
 
-        $from = $request->get('f');
-        if (! is_numeric($from)) {
+        $fromId = $request->get('f');
+        if (! is_numeric($fromId)) {
             return view('checkout', [
                 'fromJs' => true
             ]);
         }
 
+        $robot = Robot::find((int)$fromId);
+
         return view('checkout', [
-            'fromJs' => false
+            'fromJs' => false,
+            'robot' => $robot
         ]);
     }
 }

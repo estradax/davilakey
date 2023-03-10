@@ -176,7 +176,7 @@
                                 </div>
                                 <div class="row pb-3">
                                     <div class="col d-grid">
-                                        <a href="{{ route('checkout.index') }}" class="btn btn-success btn-lg" name="submit" value="buy">Buy</a>
+                                        <a href="{{ route('checkout.index', ['f' => $robot->id]) }}" class="btn btn-success btn-lg" name="submit" value="buy">Buy</a>
                                     </div>
                                     <div class="col d-grid">
                                         <button type="button" @click="addToCart" class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>

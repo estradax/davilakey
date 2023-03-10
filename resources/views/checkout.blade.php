@@ -23,6 +23,15 @@
                         <span class="text-muted" x-text="currencyFormatter.format(robot.price)"></span>
                     </li>
                     </template>
+                    @if(! $fromJs)
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">{{ $robot->name }}</h6>
+                                <small class="text-muted">{{ $robot->description }}</small>
+                            </div>
+                            <span class="text-muted">${{ number_format($robot->price, 2) }}</span>
+                        </li>
+                    @endif
                     <li class="list-group-item d-flex justify-content-between bg-light">
                         <div class="text-success">
                             <h6 class="my-0">Promo code</h6>
@@ -32,7 +41,11 @@
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Total (USD)</span>
-                        <strong x-text="currencyFormatter.format(totalPrice)"></strong>
+                        @if(! $fromJs)
+                            <strong>${{ number_format($robot->price, 2) }}</strong>
+                        @else
+                            <strong x-text="currencyFormatter.format(totalPrice)"></strong>
+                        @endif
                     </li>
                 </ul>
 
