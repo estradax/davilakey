@@ -1,7 +1,8 @@
 @extends('layouts.shell')
 
 @section('shell.content')
-    <div x-data="checkout" class="container mb-5">
+    <div @if($fromJs) x-data="checkout" @endif class="container mb-5">
+
         <div class="py-5 text-center">
             <h2>Checkout</h2>
         </div>
@@ -172,6 +173,12 @@
                 currency: 'USD'
             }),
             async init() {
+                const items = Alpine.store('cart').items;
+                if (items.length < 1) {
+                    window.location.assign(@js(route('shop')));
+                    return;
+                }
+
                 const params = {
                     ids: JSON.stringify(Alpine.store('cart').items)
                 };
