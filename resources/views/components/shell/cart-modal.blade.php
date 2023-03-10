@@ -7,6 +7,9 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-content modal-body border-0 p-0">
+            <div x-show="showCheckoutButton" class="mb-3">
+                <a class="w-100 btn btn-primary" href="{{ route('checkout.index') }}">Checkout</a>
+            </div>
             <ul style="list-style-type: none; margin: 0; padding: 0">
                 <template x-for="robot in robots">
                 <li>
@@ -40,6 +43,7 @@
 <script>
     const cart = {
         robots: [],
+        showCheckoutButton: false,
         async fetchCartDetail(ids) {
             const params = { ids };
             const resp = await axios.get('/api/cart-detail', { params });
@@ -48,13 +52,20 @@
         },
         async init() {
             this.$watch('$store.cart.items', async () => {
-                this.robots = await this.fetchCartDetail(JSON.stringify(Alpine.store('cart').items));
+                const items = Alpine.store('cart').items;
+                this.showCheckoutButton = items.length > 0;
+                this.robots = await this.fetchCartDetail(JSON.stringify(items));
             });
 
             const ids = localStorage.getItem('robot_ids');
             if (!ids) return;
 
-            Alpine.store('cart').setItems(JSON.parse(ids));
+            const items = JSON.parse(ids);
+            if (items.length > 0) {
+                this.showCheckoutButton = true;
+            }
+
+            Alpine.store('cart').setItems(items);
             this.robots = await this.fetchCartDetail(ids);
         },
         cancelRobot(id) {
