@@ -51,7 +51,6 @@
                 q: this.query
             };
             const resp = await axios.get('/api/search', { params });
-            console.log(resp);
 
             this.robots = resp.data;
         }
