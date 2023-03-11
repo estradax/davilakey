@@ -94,7 +94,7 @@ Robot mungkin dikendalikan dari jarak jauh oleh manusia, tetapi seringkali sebag
         <div class="row">
             @foreach($categories as $category)
                 <div class="col-12 col-md-4 p-5 mt-3">
-                    <a href="{{ route('shop') }}"><img style="width: 344px !important; height: 268px !important;" src="{{ $category['image_url'] }}" class="rounded-circle img-fluid border"></a>
+                    <a href="{{ route('shop') }}"><img style="width: 344px !important; height: 268px !important; object-fit: cover !important;" src="{{ $category['image_url'] }}" class="rounded-circle img-fluid border"></a>
                     <h5 class="text-center mt-3 mb-3">{{ $category['name'] }}</h5>
                     <p class="text-center"><a href="{{ route('shop') }}" class="btn btn-success">Go Shop</a></p>
                 </div>
@@ -121,7 +121,7 @@ Robot mungkin dikendalikan dari jarak jauh oleh manusia, tetapi seringkali sebag
                     <div class="col-12 col-md-4 mb-4">
                         <div class="card h-100">
                             <a href="{{ route('shop.show', $robot->id) }}">
-                                <img style="width: 100% !important; height: 354px !important;" src="{{ $robot->image_url }}" class="card-img-top" alt="...">
+                                <img style="width: 100% !important; height: 354px !important; object-fit: cover !important;" src="{{ $robot->image_url }}" class="card-img-top" alt="...">
                             </a>
                             <div class="card-body">
                                 <ul class="list-unstyled d-flex justify-content-between">
