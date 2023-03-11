@@ -13,6 +13,7 @@ class ShopController extends Controller
     }
 
     public function show(Robot $robot) {
-       return view('shop-single', compact('robot'));
+       $relatedRobots = Robot::inRandomOrder()->take(12)->get();
+       return view('shop-single', compact('robot', 'relatedRobots'));
     }
 }
