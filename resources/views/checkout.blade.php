@@ -62,7 +62,11 @@
                 <h4 class="mb-3">Billing address</h4>
                 <form method="post" action="{{ route('checkout.store') }}" class="needs-validation" novalidate>
                     @csrf
-                    <input type="hidden" name="cart" :value="JSON.stringify($store.cart.items)">
+                    @if(! $fromJs)
+                        <input type="hidden" name="cart" value="{{ json_encode([$robot->id]) }}">
+                    @else
+                        <input type="hidden" name="cart" :value="JSON.stringify($store.cart.items)">
+                    @endif
                     <div class="mb-3">
                         <label for="telephone">Telephone</label>
                         <div class="input-group">
