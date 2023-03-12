@@ -39,6 +39,10 @@ Route::get('/checkout', [CheckoutController::class, 'index'])
     ->middleware('auth')
     ->name('checkout.index');
 
+Route::post('/checkout', [CheckoutController::class, 'store'])
+    ->middleware('auth')
+    ->name('checkout.store');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -60,7 +60,9 @@
             </div>
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3">Billing address</h4>
-                <form class="needs-validation" novalidate>
+                <form method="post" action="{{ route('checkout.store') }}" class="needs-validation" novalidate>
+                    @csrf
+                    <input type="hidden" name="cart" :value="JSON.stringify($store.cart.items)">
                     <div class="mb-3">
                         <label for="telephone">Telephone</label>
                         <div class="input-group">
@@ -70,7 +72,7 @@
 
                     <div class="mb-3">
                         <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                        <input name="address" type="text" class="form-control" id="address" placeholder="1234 Main St" required>
                         <div class="invalid-feedback">
                             Please enter your shipping address.
                         </div>
