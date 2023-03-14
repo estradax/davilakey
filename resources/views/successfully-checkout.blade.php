@@ -1,6 +1,7 @@
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 </head>
 <style>
     body {
@@ -43,6 +44,7 @@
     </div>
     <h1>Success</h1>
     <p>We received your purchase request;<br/> we'll be in touch shortly!</p>
+    <a class="btn btn-primary mt-4" href="{{ route('shop') }}">Go shop again</a>
 </div>
 </body>
 </html>
