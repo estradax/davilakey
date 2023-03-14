@@ -42,7 +42,9 @@ class CheckoutController extends Controller
         //        Assume this is array of robot id.
         $cart = json_decode($request->get('cart'));
 
-        DB::transaction(function () use($cart, $request) {
+        $checkoutId = null;
+
+        DB::transaction(function () use($cart, $request, &$checkoutId) {
             $robots = Robot::find($cart);
 
             $totalPrice = 0;
@@ -55,6 +57,8 @@ class CheckoutController extends Controller
                 'total_price' => $totalPrice
             ]);
 
+            $checkoutId = $checkout->id;
+
             $robotIds = $robots->map(function (Robot $robot) {
                 return $robot->id;
             });
@@ -62,6 +66,6 @@ class CheckoutController extends Controller
             $checkout->robots()->attach($robotIds);
         });
 
-        return redirect()->route('welcome');
+        return redirect()->route('successfullyCheckout', ['id' => $checkoutId]);
     }
 }
