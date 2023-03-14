@@ -5,6 +5,7 @@ use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\SuccessfullyCheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +44,9 @@ Route::post('/checkout', [CheckoutController::class, 'store'])
     ->middleware('auth')
     ->name('checkout.store');
 
-Route::get('/successfully-checkout', function () {
-    return view('successfully-checkout');
-});
+Route::get('/successfully-checkout', SuccessfullyCheckoutController::class)
+    ->middleware('auth')
+    ->name('successfullyCheckout');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
