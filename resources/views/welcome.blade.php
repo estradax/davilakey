@@ -15,7 +15,7 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="./assets/img/robot2.jpg" style="width:400px;height:400px;"alt="">
+                            <img class="img-fluid" src="./assets/img/robotback.png" style="width:400px;height:400px;"alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
@@ -34,7 +34,7 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="./assets/img/banner_img_02.jpg" alt="">
+                            <img class="img-fluid" src="./assets/img/kalianharus.png" alt=""style = "height : 400px ! important; margin-left:100px !important;">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
@@ -54,7 +54,7 @@ Robot mungkin dikendalikan dari jarak jauh oleh manusia, tetapi seringkali sebag
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="./assets/img/banner_img_03.jpg" alt="">
+                            <img class="img-fluid" src="./assets/img/sewa.png" alt=""style = "height : 500px ! important; margin-left:100px !important;">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
@@ -84,10 +84,10 @@ Robot mungkin dikendalikan dari jarak jauh oleh manusia, tetapi seringkali sebag
     <section class="container py-5">
         <div class="row text-center pt-3">
             <div class="col-lg-6 m-auto">
-                <h1 class="h1">Categories of The Month</h1>
+                <h1 class="h1"><strong> Barang Terpopuler Bulan Ini!!<strong></h1>
                 <p>
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
+                    Silahkan Checkout Barang Mu
+                    Sekarang Jugaa !!!.
                 </p>
             </div>
         </div>
@@ -109,10 +109,10 @@ Robot mungkin dikendalikan dari jarak jauh oleh manusia, tetapi seringkali sebag
         <div class="container py-5">
             <div class="row text-center py-3">
                 <div class="col-lg-6 m-auto">
-                    <h1 class="h1">Featured Product</h1>
+                    <h1 class="h1"><strong>Produk Kami</strong></h1>
                     <p>
-                        Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident.
+                    Ini dia robot robot yang dapat melengkapi kebutuhan Industri maupun Pribadi Anda.
+                        Silahkan Pilih Robot Yang Anda Sukai!.
                     </p>
                 </div>
             </div>
