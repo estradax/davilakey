@@ -40,11 +40,15 @@ RUN npm run build
 
 RUN chown -R www-data:www-data /var/www/html/storage
 
+RUN chown -R www-data:www-data /var/www/html/database
+
 RUN cp .env.example .env
 
 RUN php artisan key:generate
 
-RUN php artisan migrate
+RUN php artisan migrate:fresh
+
+RUN php artisan db:seed
 
 EXPOSE 8080
 
