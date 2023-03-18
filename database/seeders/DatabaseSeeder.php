@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Robot;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,7 +20,13 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            RobotSeeder::class
+            RobotSeeder::class,
+            CategorySeeder::class
         ]);
+
+        $robots = Robot::all();
+        $robots->map(function (Robot $robot) {
+            $robot->categories()->attach(rand(1, 3));
+        });
     }
 }
