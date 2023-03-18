@@ -46,6 +46,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="list-inline shop-top-menu pb-3 pt-1">
+                            <li class="list-inline-item">
+                                <a class="h3 text-dark text-decoration-none mr-3" href="{{ route('shop') }}">All</a>
+                            </li>
                             @foreach($categories as $category)
                                 <li class="list-inline-item">
                                     <a class="h3 text-dark text-decoration-none mr-3" href="{{ route('shop', ['cat' => $category->id]) }}">{{ $category->name }}</a>
