@@ -13,7 +13,7 @@
                     <div class="row">
                         <!--Start Controls-->
                         <div class="col-1 align-self-center">
-                            <a href="#multi-item-example" role="button" data-bs-slide="prev">
+                            <a href="#multi-item-example" role="button" data-bs-slide="next">
                                 <i class="text-dark fas fa-chevron-left"></i>
                                 <span class="sr-only">Previous</span>
                             </a>
@@ -95,7 +95,7 @@
                         <!--End Carousel Wrapper-->
                         <!--Start Controls-->
                         <div class="col-1 align-self-center">
-                            <a href="#multi-item-example" role="button" data-bs-slide="next">
+                            <a href="#multi-item-example" role="button" data-bs-slide="prev">
                                 <i class="text-dark fas fa-chevron-right"></i>
                                 <span class="sr-only">Next</span>
                             </a>
