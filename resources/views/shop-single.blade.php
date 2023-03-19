@@ -115,13 +115,9 @@
 
                             <h6>Specification:</h6>
                             <ul class="list-unstyled pb-3">
-                                <li>Lorem ipsum dolor sit</li>
-                                <li>Amet, consectetur</li>
-                                <li>Adipiscing elit,set</li>
-                                <li>Duis aute irure</li>
-                                <li>Ut enim ad minim</li>
-                                <li>Dolore magna aliqua</li>
-                                <li>Excepteur sint</li>
+                                @foreach($robot->specs as $spec)
+                                    <li>{{ $spec->content }}</li>
+                                @endforeach
                             </ul>
 
                             <form action="" method="GET">
