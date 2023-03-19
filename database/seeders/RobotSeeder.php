@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Robot;
+use App\Models\RobotSpec;
 use Illuminate\Database\Seeder;
 
 class RobotSeeder extends Seeder
@@ -12,6 +13,10 @@ class RobotSeeder extends Seeder
      */
     public function run(): void
     {
-        Robot::factory(30)->create();
+        $robots = Robot::factory(30)->create();
+
+        $robots->map(function (Robot $robot) {
+            $robot->specs()->saveMany(RobotSpec::factory(rand(3, 4))->make());
+        });
     }
 }

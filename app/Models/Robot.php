@@ -13,4 +13,9 @@ class Robot extends Model
     {
         return $this->belongsToMany(Category::class);
     }
+
+    public function specs()
+    {
+        return $this->hasMany(RobotSpec::class);
+    }
 }
