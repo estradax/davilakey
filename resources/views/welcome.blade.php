@@ -15,7 +15,7 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="./assets/img/robotback.png" style="width:400px;height:400px;"alt="">
+                            <img class="img-fluid" src="./assets/img/robotback.png" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
@@ -34,16 +34,16 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="./assets/img/kalianharus.png" alt=""style = "height : 400px ! important; margin-left:100px !important;">
+                            <img class="img-fluid" src="./assets/img/kalianharus.png" alt=""style = "margin-left:100px !important;">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
-                                <h2>KALIAN HARUS TAU!!</h2>
+                                <h2>KALIAN HARUS TAU !</h2>
                                 <h3 class="h2">Informasi</h3>
                                 <p>
-                                Robot adalah mesin yang dapat melakukan tindakan kompleks secara otomatis.  Mereka umumnya membutuhkan tiga elemen: sensor seperti kamera, lidar, atau mikrofon;  aktuator seperti motor, piston atau otot buatan, dan pengontrol.
-
-Robot mungkin dikendalikan dari jarak jauh oleh manusia, tetapi seringkali sebagian atau seluruhnya dikendalikan oleh komputer, menjadikannya otonom.
+                                Robot adalah mesin yang dapat melakukan tindakan kompleks secara otomatis.  Mereka umumnya membutuhkan tiga elemen: sensor seperti kamera, lidar, 
+                                atau mikrofon;  aktuator seperti motor, piston atau otot buatan, dan pengontrol.
+                                Robot mungkin dikendalikan dari jarak jauh oleh manusia, tetapi seringkali sebagian atau seluruhnya dikendalikan oleh komputer, menjadikannya otonom.
                                 </p>
                             </div>
                         </div>
@@ -54,7 +54,7 @@ Robot mungkin dikendalikan dari jarak jauh oleh manusia, tetapi seringkali sebag
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="./assets/img/sewa.png" alt=""style = "height : 500px ! important; margin-left:100px !important;">
+                            <img class="img-fluid" src="./assets/img/sewa.png" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">

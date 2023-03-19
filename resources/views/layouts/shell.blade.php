@@ -8,8 +8,8 @@
 
     @vite(['resources/js/app.js'])
 
-    <link rel="apple-touch-icon" href="/assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/assets/img/LOGO_PAJERO.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/LOGO_PAJERO.png">
 
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/templatemo.css">
