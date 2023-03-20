@@ -41,7 +41,7 @@
                                 <h2>KALIAN HARUS TAU !</h2>
                                 <h3 class="h2">Informasi</h3>
                                 <p>
-                                Robot adalah mesin yang dapat melakukan tindakan kompleks secara otomatis.  Mereka umumnya membutuhkan tiga elemen: sensor seperti kamera, lidar, 
+                                Robot adalah mesin yang dapat melakukan tindakan kompleks secara otomatis.  Mereka umumnya membutuhkan tiga elemen: sensor seperti kamera, lidar,
                                 atau mikrofon;  aktuator seperti motor, piston atau otot buatan, dan pengontrol.
                                 Robot mungkin dikendalikan dari jarak jauh oleh manusia, tetapi seringkali sebagian atau seluruhnya dikendalikan oleh komputer, menjadikannya otonom.
                                 </p>
@@ -94,7 +94,7 @@
         <div class="row">
             @foreach($categories as $category)
                 <div class="col-12 col-md-4 p-5 mt-3">
-                    <a href="{{ route('shop') }}"><img style="width: 344px !important; height: 268px !important; object-fit: cover !important;" src="{{ $category['image_url'] }}" class="rounded-circle img-fluid border"></a>
+                    <a href="{{ route('shop') }}"><img style="width: 344px !important; margin-left: 0 !important; max-width: 100% !important; height: 268px !important; object-fit: cover !important;" src="{{ $category['image_url'] }}" class="rounded-circle img-fluid border"></a>
                     <h5 class="text-center mt-3 mb-3">{{ $category['name'] }}</h5>
                     <p class="text-center"><a href="{{ route('shop') }}" class="btn btn-success">Go Shop</a></p>
                 </div>

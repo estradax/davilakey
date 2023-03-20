@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-5 mt-5">
                     <div class="card mb-3">
-                        <img style="height: 600px !important; object-fit: cover !important;" class="card-img img-fluid" src="{{ $robot->image_url }}" alt="Card image cap" id="product-detail">
+                        <img style="width: 100% !important; margin-left: 0 !important; max-width: 100% !important; height: 600px !important; object-fit: cover !important;" class="card-img img-fluid" src="{{ $robot->image_url }}" alt="Card image cap" id="product-detail">
                     </div>
                     <div class="row">
                         <!--Start Controls-->
@@ -156,7 +156,7 @@
                 <div class="p-2 pb-3">
                     <div class="product-wap card rounded-0">
                         <div class="card rounded-0">
-                            <img style="width: 100% !important; height: 430px !important; object-fit: cover !important;" class="card-img rounded-0 img-fluid" src="{{ $relatedRobot->image_url }}">
+                            <img style="width: 100% !important; margin-left: 0 !important; max-width: 100% !important; height: 430px !important; object-fit: cover !important;" class="card-img rounded-0 img-fluid" src="{{ $relatedRobot->image_url }}">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
                                     <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
