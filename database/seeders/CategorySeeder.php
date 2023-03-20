@@ -45,7 +45,7 @@ class CategorySeeder extends Seeder
         $industrial = Category::create([
             'name' => 'Industrial'
         ]);
-        $spareparts->subCategories()->saveMany([
+        $industrial->subCategories()->saveMany([
             SubCategory::factory([
                 'name' => 'Auto Machine'
             ])->make(),
