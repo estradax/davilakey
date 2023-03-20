@@ -18,7 +18,7 @@
                             <div class="row" style="height: 100% !important; align-items: center;">
                                 <div class="col-lg-2" style="height: 100% !important;">
                                     <div class="card" style="height: 100% !important;">
-                                        <img style="height: 100% !important;" class="card-img img-fluid" x-bind:src="robot.image_url" alt="Card image cap" id="product-detail">
+                                        <img style="width: 100% !important; margin-left: 0 !important; max-width: 100% !important; height: 100% !important;" class="card-img img-fluid" x-bind:src="robot.image_url" alt="Card image cap" id="product-detail">
                                     </div>
                                 </div>
                                 <!-- col end -->
