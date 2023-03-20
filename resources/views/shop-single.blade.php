@@ -23,72 +23,19 @@
                         <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item" data-bs-ride="carousel">
                             <!--Start Slides-->
                             <div class="carousel-inner product-links-wap" role="listbox">
-
-                                <!--First slide-->
-                                <div class="carousel-item active">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="/assets/img/product_single_01.jpg" alt="Product Image 1">
-                                            </a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="/assets/img/product_single_02.jpg" alt="Product Image 2">
-                                            </a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="/assets/img/product_single_03.jpg" alt="Product Image 3">
-                                            </a>
+                                @foreach($robot->subImages->chunk(3) as $subImageChunk)
+                                    <div class="carousel-item @if($loop->first) active @endif">
+                                        <div class="row">
+                                            @foreach($subImageChunk as $subImage)
+                                                <div class="col-4">
+                                                    <a href="#">
+                                                        <img style="margin-left: 0 !important; width: 100% !important; object-fit: cover !important; max-width: 100% !important; height: 200px !important;" class="card-img img-fluid" src="{{ $subImage->image_url }}" alt="Product Image 1">
+                                                    </a>
+                                                </div>
+                                            @endforeach
                                         </div>
                                     </div>
-                                </div>
-                                <!--/.First slide-->
-
-                                <!--Second slide-->
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="/assets/img/product_single_04.jpg" alt="Product Image 4">
-                                            </a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="/assets/img/product_single_05.jpg" alt="Product Image 5">
-                                            </a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="/assets/img/product_single_06.jpg" alt="Product Image 6">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--/.Second slide-->
-
-                                <!--Third slide-->
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="/assets/img/product_single_07.jpg" alt="Product Image 7">
-                                            </a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="/assets/img/product_single_08.jpg" alt="Product Image 8">
-                                            </a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="/assets/img/product_single_09.jpg" alt="Product Image 9">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--/.Third slide-->
+                                @endforeach
                             </div>
                             <!--End Slides-->
                         </div>
