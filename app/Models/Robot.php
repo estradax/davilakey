@@ -18,4 +18,9 @@ class Robot extends Model
     {
         return $this->hasMany(RobotSpec::class);
     }
+
+    public function subImages()
+    {
+        return $this->hasMany(RobotSubImage::class);
+    }
 }
