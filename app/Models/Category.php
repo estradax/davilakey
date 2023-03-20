@@ -9,8 +9,15 @@ class Category extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function robots()
     {
         return $this->belongsToMany(Robot::class);
+    }
+
+    public function subCategories()
+    {
+        return $this->hasMany(SubCategory::class);
     }
 }
