@@ -18,7 +18,9 @@ class RobotSeeder extends Seeder
 
         $robots->map(function (Robot $robot) {
             $robot->specs()->saveMany(RobotSpec::factory(rand(3, 4))->make());
-            $robot->subImages()->saveMany(RobotSubImage::factory(rand(3, 4))->make());
+
+            $amountOfSubImages = rand(0, 1) == 0 ? 6 : 9;
+            $robot->subImages()->saveMany(RobotSubImage::factory($amountOfSubImages)->make());
         });
     }
 }
