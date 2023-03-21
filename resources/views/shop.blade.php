@@ -16,7 +16,7 @@
                             </a>
                             <ul class="collapse show list-unstyled pl-3">
                                 @foreach($category->subCategories as $subCategory)
-                                    <li><a class="text-decoration-none" href="#">{{ $subCategory->name }}</a></li>
+                                    <li><a class="text-decoration-none" href="{{ route('shop', ['cat' => $category->id]) }}">{{ $subCategory->name }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
