@@ -7,8 +7,8 @@
             <h1 class="h1">Contact Us</h1>
             <p>
                 Hubungi kami jika ada kesulitan atau ada masalah ketika proses transaksi
-                Hubungi : Whatsapp = 0812462543
-                          Email    = Robotku@gmail.com
+                Hubungi : Whatsapp : 0812462543
+                          Email    : Robotku@gmail.com 
             </p>
         </div>
     </div>

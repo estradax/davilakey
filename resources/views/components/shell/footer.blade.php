@@ -13,11 +13,11 @@
                     </li>
                     <li>
                         <i class="fa fa-phone fa-fw"></i>
-                        <a class="text-decoration-none" href="tel:010-020-0340"> +62 22 7272215</a>
+                        <a class="text-decoration-none" href="tel:081245765798"> +62 812 3456 9876</a>
                     </li>
                     <li>
                         <i class="fa fa-envelope fa-fw"></i>
-                        <a class="text-decoration-none" href="mailto:info@company.com">humas@itenas.ac.id</a>
+                        <a class="text-decoration-none" href="nandayunan52@gmail.com">Robotku@gmail.com</a>
                     </li>
                 </ul>
             </div>
