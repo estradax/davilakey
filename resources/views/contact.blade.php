@@ -8,7 +8,7 @@
             <p>
                 Hubungi kami jika ada kesulitan atau ada masalah ketika proses transaksi
                 Hubungi : Whatsapp : 0812462543
-                          Email    : Robotku@gmail.com 
+                          Email    : Robotku@gmail.com
             </p>
         </div>
     </div>
@@ -17,9 +17,9 @@
     <div id="mapid" style="width: 100%; height: 300px;"></div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script>
-        var mymap = L.map('mapid').setView([-6.89724353191242,  107.63547245552208, 12], 14);
+        var mymap = L.map('mapid').setView([-6.89724353191242,  107.63547245552208, 12], 13);
 
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 18,
             attribution: 'PajeRobot',
             id: 'mapbox/streets-v11',
