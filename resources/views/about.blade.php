@@ -15,7 +15,7 @@
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <img src="assets/img/aboutus-removebg-preview.png" alt="mesinrobot-removebg-preview">
+                    <img style="height: 500px !important;" src="assets/img/aboutus-removebg-preview.png" alt="mesinrobot-removebg-preview">
                 </div>
             </div>
         </div>
