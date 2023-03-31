@@ -25,7 +25,10 @@ Table of contents
 16. Extra large devices (large desktops, 1200px and up)
 --------------------------------------------- */
 
-
+/* logo login */
+.logo-login{
+  height: 50% !important;
+}
 
 
 /* Typography */
