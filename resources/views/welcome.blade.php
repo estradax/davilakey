@@ -19,10 +19,10 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
-                                <h1 class="h1 text-success"><b>PajeRobot</b> Sites</h1>
+                                <h1 class="h1 text-success"><b>{{ config('app.name') }}</b> Sites</h1>
                                 <h3 class="h2">Website pertama di indonesia yang menyediakan segala macam kebutuhan robotic</h3>
                                 <p>
-                                    PajeRobot website yang berisi tentang informasi robotic,jual-beli,penyewaan robot, dan lain-lain tentang robot.
+                                    {{ config('app.name') }} website yang berisi tentang informasi robotic,jual-beli,penyewaan robot, dan lain-lain tentang robot.
 
                                 </p>
                             </div>

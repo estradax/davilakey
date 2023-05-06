@@ -21,7 +21,7 @@
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 18,
-            attribution: 'PajeRobot',
+            attribution: @js(config('app.name')),
             id: 'mapbox/streets-v11',
             tileSize: 512,
             zoomOffset: -1

@@ -8,7 +8,7 @@
                 <div class="col-md-8 text-white">
                     <h1>About Us</h1>
                     <p>
-                        PajeRobot Adalah website yang berisi tentang informasi robotic,jual-beli,penyewaan robot dan lain-lain tentang robot.
+                        {{ config('app.name') }} Adalah website yang berisi tentang informasi robotic,jual-beli,penyewaan robot dan lain-lain tentang robot.
                         Kami Menyadari Bahwa Perkembangan Teknologi Akan Sangat Mempengaruhi Pola Dan Gaya Hidup Manusia Dimulai Dari Sekarang
                         Sampai Dengan Masa Yang Akan Datang .Untuk Itu Kami Akan Ikut Serta Mendukung Perkembangan Teknologi Robotic ini
                         Khusus Nya Perkembangan Robotic Di Indonesia

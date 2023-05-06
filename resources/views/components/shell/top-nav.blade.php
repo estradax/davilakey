@@ -5,7 +5,7 @@
         <div class="w-100 d-flex justify-content-between">
             <div>
                 <i class="fa fa-envelope mx-2"></i>
-                <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:Pajero@company.com">Pajero@company.com</a>
+                <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:{{ config('mail.from.address') }}">{{ config('mail.from.address') }}</a>
                 <i class="fa fa-phone mx-2"></i>
                 <a class="navbar-sm-brand text-light text-decoration-none" href="tel:+6287715062585">+6287715062585</a>
             </div>

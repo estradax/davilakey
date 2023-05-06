@@ -5,7 +5,7 @@
         <div class="row">
 
             <div class="col-md-4 pt-5">
-                <h2 class="h2 text-success border-bottom pb-3 border-light logo">PajeRobot</h2>
+                <h2 class="h2 text-success border-bottom pb-3 border-light logo">{{ config('app.name') }}</h2>
                 <ul class="list-unstyled text-light footer-link-list">
                     <li>
                         <i class="fas fa-map-marker-alt fa-fw"></i>
@@ -79,7 +79,7 @@
             <div class="row pt-2">
                 <div class="col-12">
                     <p class="text-left text-light">
-                        Copyright &copy; 2023 PajeRobot
+                        Copyright &copy; 2023 {{ config('app.name') }}
                     </p>
                 </div>
             </div>
