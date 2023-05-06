@@ -8,8 +8,7 @@
                 <h2 class="h2 text-success border-bottom pb-3 border-light logo">{{ config('app.name') }}</h2>
                 <ul class="list-unstyled text-light footer-link-list">
                     <li>
-                        <i class="fas fa-map-marker-alt fa-fw"></i>
-                        Jl. PH. H. Mustofa No. 23 – Bandung, 40124 Indonesia
+                        <i class="fas fa-map-marker-alt fa-fw"></i> {{ config('app.location') }}
                     </li>
                     <li>
                         <i class="fa fa-phone fa-fw"></i>

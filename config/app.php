@@ -58,6 +58,8 @@ return [
 
     'tel' => env('APP_TEL', '212-456-7890'),
 
+    'location' => '1600 Amphitheatre Parkway in Mountain View, California',
+
     'asset_url' => env('ASSET_URL'),
 
     /*
