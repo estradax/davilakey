@@ -11,15 +11,15 @@ class WelcomeController extends Controller
     {
         $categories = [
             [
-                'name' => 'Robot Industri',
+                'name' => 'Industrial',
                 'image_url' => '/assets/robot-categories/sparepart.jpg'
             ],
             [
-                'name' => 'Sparepart Robot',
+                'name' => 'Spare Parts',
                 'image_url' => '/assets/robot-categories/arduino.jpg'
             ],
             [
-                'name' => 'Robot ',
+                'name' => 'The One',
                 'image_url' => '/assets/robot-categories/tesla.jpg'
             ]
         ];

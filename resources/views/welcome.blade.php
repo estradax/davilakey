@@ -20,11 +20,7 @@
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
                                 <h1 class="h1 text-success"><b>{{ config('app.name') }}</b> Sites</h1>
-                                <h3 class="h2">Website pertama di indonesia yang menyediakan segala macam kebutuhan robotic</h3>
-                                <p>
-                                    {{ config('app.name') }} website yang berisi tentang informasi robotic,jual-beli,penyewaan robot, dan lain-lain tentang robot.
-
-                                </p>
+                                <p>Discover the world of robots at our online shop. With a wide selection, detailed product info, and expert support, finding the perfect robot has never been easier. Shop now!</p>
                             </div>
                         </div>
                     </div>
@@ -38,13 +34,8 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
-                                <h2>KALIAN HARUS TAU !</h2>
-                                <h3 class="h2">Informasi</h3>
-                                <p>
-                                Robot adalah mesin yang dapat melakukan tindakan kompleks secara otomatis.  Mereka umumnya membutuhkan tiga elemen: sensor seperti kamera, lidar,
-                                atau mikrofon;  aktuator seperti motor, piston atau otot buatan, dan pengontrol.
-                                Robot mungkin dikendalikan dari jarak jauh oleh manusia, tetapi seringkali sebagian atau seluruhnya dikendalikan oleh komputer, menjadikannya otonom.
-                                </p>
+                                <h2>About</h2>
+                                <p>A robot online shop is a store that sells robots through various channels, including web-based platforms and mobile applications. These shops offer a wide range of robots, with detailed product information, reviews, and ratings available for customers. Some shops may also provide technical support and after-sales services.</p>
                             </div>
                         </div>
                     </div>
@@ -58,12 +49,8 @@
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
-                                <h1 class="h1">Jual-Beli dan Sewa Robot</h1>
-                                <h3 class="h2">Kami Menyediakan Robot Dalam Berbagai Kebutuhan Mulai Dari Robot Industri,Robot Elektrik dan masih banyak lagi. </h3>
-                                <p>
-                                    Di website ini kalian bisa menemukan jenis robot yang kalian inginkan dan butuhkan.
-                                    Kami juga menjual sparepart robot agar mempermudah customer mencari sparepart yang belum tersedia.
-                                </p>
+                                <h1 class="h1">Selling and Renting Robots</h1>
+                                <p>Experience the latest in robotic technology with our sales and rental services. Buy a robot for full customization and operation, or rent one for a flexible, cost-effective option. Browse our top-quality robots and expert support for hassle-free usage. Discover the amazing world of robots today!</p>
                             </div>
                         </div>
                     </div>
@@ -84,11 +71,8 @@
     <section class="container py-5">
         <div class="row text-center pt-3">
             <div class="col-lg-6 m-auto">
-                <h1 class="h1"><strong> Barang Terpopuler Bulan Ini!!<strong></h1>
-                <p>
-                    Silahkan Checkout Barang Mu
-                    Sekarang Jugaa !!!.
-                </p>
+                <h1 class="h1"><strong>Hot categories this month</strong></h1>
+                <p>Shop hot robotics categories for the best products and expert support. Checkout easily and securely. Buy now!</p>
             </div>
         </div>
         <div class="row">
@@ -109,11 +93,7 @@
         <div class="container py-5">
             <div class="row text-center py-3">
                 <div class="col-lg-6 m-auto">
-                    <h1 class="h1"><strong>Produk Kami</strong></h1>
-                    <p>
-                    Ini dia robot robot yang dapat melengkapi kebutuhan Industri maupun Pribadi Anda.
-                        Silahkan Pilih Robot Yang Anda Sukai!.
-                    </p>
+                    <h1 class="h1"><strong>Featured Products</strong></h1>
                 </div>
             </div>
             <div class="row">
