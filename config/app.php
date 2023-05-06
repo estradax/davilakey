@@ -56,6 +56,8 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    'tel' => env('APP_TEL', '212-456-7890'),
+
     'asset_url' => env('ASSET_URL'),
 
     /*

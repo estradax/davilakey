@@ -13,11 +13,11 @@
                     </li>
                     <li>
                         <i class="fa fa-phone fa-fw"></i>
-                        <a class="text-decoration-none" href="tel:081245765798"> +62 812 3456 9876</a>
+                        <a class="text-decoration-none" href="tel:{{ config('app.tel') }}">{{ config('app.tel') }}</a>
                     </li>
                     <li>
                         <i class="fa fa-envelope fa-fw"></i>
-                        <a class="text-decoration-none" href="nandayunan52@gmail.com">Robotku@gmail.com</a>
+                        <a class="text-decoration-none" href="mailto:{{ config('mail.from.address') }}">{{ config('mail.from.address') }}</a>
                     </li>
                 </ul>
             </div>

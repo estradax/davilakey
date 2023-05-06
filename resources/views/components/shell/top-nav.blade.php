@@ -7,7 +7,7 @@
                 <i class="fa fa-envelope mx-2"></i>
                 <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:{{ config('mail.from.address') }}">{{ config('mail.from.address') }}</a>
                 <i class="fa fa-phone mx-2"></i>
-                <a class="navbar-sm-brand text-light text-decoration-none" href="tel:+6287715062585">+6287715062585</a>
+                <a class="navbar-sm-brand text-light text-decoration-none" href="tel:{{ config('app.tel') }}">{{ config('app.tel') }}</a>
             </div>
             <div>
                 <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
