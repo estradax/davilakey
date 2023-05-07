@@ -1,11 +1,12 @@
 {
-    "name": "laravel/laravel",
+    "name": "davilakey/robotshop",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "A robot shop website",
+    "keywords": ["robot", "web"],
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "cloudinary/cloudinary_php": "^2.10",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
@@ -39,23 +40,14 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
-						"chown -R www-data:www-data /var/www/html/storage",
-						"chown -R www-data:www-data /var/www/html/database",
-						"chown -R www-data:www-data /var/www/html/database/database.sqlite"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ],
-				"pre-update-cmd": [
-						"chown -R :www-data /var/www/html",
-						"chmod -R 775 /var/www/html/database",
-						"chown -R www-data:www-data /var/www/html/storage",
-						"chown -R www-data:www-data /var/www/html/database"
-				]
+        ]
     },
     "extra": {
         "laravel": {
