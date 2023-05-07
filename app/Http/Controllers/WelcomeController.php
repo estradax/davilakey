@@ -2,24 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Media\CloudinaryMedia;
 use App\Models\Robot;
 
 class WelcomeController extends Controller
 {
-    public function __invoke(CloudinaryMedia $media)
+    public function __invoke($media)
     {
         $categories = [
             [
-                'name' => 'Robot Industri',
+                'name' => 'Industrial',
                 'image_url' => '/assets/robot-categories/sparepart.jpg'
             ],
             [
-                'name' => 'Sparepart Robot',
+                'name' => 'Spare parts',
                 'image_url' => '/assets/robot-categories/arduino.jpg'
             ],
             [
-                'name' => 'Robot ',
+                'name' => 'The one',
                 'image_url' => '/assets/robot-categories/tesla.jpg'
             ]
         ];
