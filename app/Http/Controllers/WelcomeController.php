@@ -11,16 +11,16 @@ class WelcomeController extends Controller
     {
         $categories = [
             [
-                'name' => 'Industrial',
-                'image_url' => $media->image('industrial_ovpxmy')->toUrl()
+                'name' => 'Robot Industri',
+                'image_url' => '/assets/robot-categories/sparepart.jpg'
             ],
             [
-                'name' => 'Spare Parts',
-                'image_url' => $media->image('arduino_lpqzv3')->toUrl()
+                'name' => 'Sparepart Robot',
+                'image_url' => '/assets/robot-categories/arduino.jpg'
             ],
             [
-                'name' => 'The One',
-                'image_url' => $media->image('tesla_hzvrgi')->toUrl(),
+                'name' => 'Robot ',
+                'image_url' => '/assets/robot-categories/tesla.jpg'
             ]
         ];
 
