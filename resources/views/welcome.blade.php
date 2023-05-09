@@ -101,7 +101,7 @@
                     <div class="col-12 col-md-4 mb-4">
                         <div class="card h-100">
                             <a href="{{ route('shop.show', $robot->id) }}">
-                                <img style="width: 100% !important; height: 354px !important; object-fit: cover !important;" src="{{ $robot->image_url }}" class="card-img-top" alt="...">
+                                <img style="width: 100% !important; height: 354px !important; object-fit: cover !important;" src="{{ \App\Util\Clodinary::scaleTo($robot->fetchFirstMedia()->getFilename(), 400, 400)->toUrl() }}" class="card-img-top" alt="...">
                             </a>
                             <div class="card-body">
                                 <ul class="list-unstyled d-flex justify-content-between">

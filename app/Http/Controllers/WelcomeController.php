@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Robot;
 use Cloudinary\Transformation\Resize;
-use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use App\Util\Clodinary as CloudinaryUtil;
 
 class WelcomeController extends Controller
 {
@@ -13,18 +13,15 @@ class WelcomeController extends Controller
         $categories = [
             [
                 'name' => 'Industrial',
-                'image_url' => Cloudinary::getImage('industrial_ovpxmy')
-                    ->resize(Resize::scale()->width(400)->height(400))->toUrl(),
+                'image_url' => CloudinaryUtil::scaleTo('industrial_ovpxmy', 400, 400)->toUrl()
             ],
             [
                 'name' => 'Spare parts',
-                'image_url' => Cloudinary::getImage('arduino_lpqzv3')
-                    ->resize(Resize::scale()->width(400)->height(400))->toUrl(),
+                'image_url' => CloudinaryUtil::scaleTo('arduino_lpqzv3', 400, 400)->toUrl()
             ],
             [
                 'name' => 'The one',
-                'image_url' => Cloudinary::getImage('tesla_hzvrgi')
-                    ->resize(Resize::scale()->width(400)->height(400))->toUrl(),
+                'image_url' => CloudinaryUtil::scaleTo('tesla_hzvrgi', 400, 400)->toUrl()
             ]
         ];
 
