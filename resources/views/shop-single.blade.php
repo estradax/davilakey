@@ -8,7 +8,11 @@
             <div class="row">
                 <div class="col-lg-5 mt-5">
                     <div class="card mb-3">
-                        <img style="width: 100% !important; margin-left: 0 !important; max-width: 100% !important; height: 600px !important; object-fit: cover !important;" class="card-img img-fluid" src="{{ $robot->image_url }}" alt="Card image cap" id="product-detail">
+                        @php
+                            $robotImageUrl = \CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::getImage($robot->fetchFirstMedia()->getFilename())
+                                ->delivery(\Cloudinary\Transformation\Delivery::quality(\Cloudinary\Transformation\Quality::auto()))->toUrl();
+                        @endphp
+                        <img style="width: 100% !important; margin-left: 0 !important; max-width: 100% !important; height: 600px !important; object-fit: cover !important;" class="card-img img-fluid" src="{{ $robotImageUrl }}" alt="Card image cap" id="product-detail">
                     </div>
                     <div class="row">
                         <!--Start Controls-->
