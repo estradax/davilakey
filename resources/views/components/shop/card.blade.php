@@ -1,9 +1,12 @@
 <div class="col-md-4">
     <div class="card mb-4 product-wap rounded-0">
         <a href="{{ route('shop.show', $robot->id) }}">
-        <div class="card rounded-0">
-            <img style="width: 600px !important; margin-left: 0 !important; max-width: 100% !important; height: 400px !important; object-fit: cover !important;" class="card-img rounded-0 img-fluid" src="{{ \App\Util\Clodinary::scaleTo($robot->fetchFirstMedia()->getFilename(), 600, 400)->toUrl() }}">
-        </div>
+            <div class="card rounded-0">
+                <img
+                    style="width: 600px !important; margin-left: 0 !important; max-width: 100% !important; height: 400px !important; object-fit: cover !important;"
+                    class="card-img rounded-0 img-fluid"
+                    src="{{ \App\Util\Cloudinary::scaleTo($robot->fetchFirstMedia()->getFilename(), 600, 400)->toUrl() }}">
+            </div>
         </a>
         <div class="card-body">
             <a href="{{ route('shop.show', $robot->id) }}" class="h3 text-decoration-none">{{ $robot->name }}</a>

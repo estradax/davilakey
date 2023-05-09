@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Robot;
 use Cloudinary\Transformation\Resize;
-use App\Util\Clodinary as CloudinaryUtil;
+use App\Util\Cloudinary as CloudinaryUtil;
 
 class WelcomeController extends Controller
 {
