@@ -3,8 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Robot;
-use App\Models\RobotSpec;
-use App\Models\RobotSubImage;
+use CloudinaryLabs\CloudinaryLaravel\Model\Media;
 use Illuminate\Database\Seeder;
 
 class RobotSeeder extends Seeder
@@ -14,13 +13,14 @@ class RobotSeeder extends Seeder
      */
     public function run(): void
     {
-        $robots = Robot::factory(30)->create();
+        $robots = Robot::factory(5)->create();
+        $robots->each(function (Robot $robot) {
+            $media = new Media();
+            $media->file_name = 'mech-mind2_qjrvfz';
+            $media->file_url = 'https://res.cloudinary.com/dgo3pwr4r/image/upload/v1683590750/mech-mind2_qjrvfz.jpg';
+            $media->size = 69420;
 
-        $robots->map(function (Robot $robot) {
-            $robot->specs()->saveMany(RobotSpec::factory(rand(3, 4))->make());
-
-            $amountOfSubImages = rand(0, 1) == 0 ? 6 : 9;
-            $robot->subImages()->saveMany(RobotSubImage::factory($amountOfSubImages)->make());
+            $robot->medially()->save($media);
         });
     }
 }

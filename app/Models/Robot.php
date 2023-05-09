@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use CloudinaryLabs\CloudinaryLaravel\MediaAlly;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Robot extends Model
 {
-    use HasFactory;
+    use HasFactory, MediaAlly;
 
     public function categories()
     {
