@@ -27,13 +27,13 @@
                         <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item" data-bs-ride="carousel">
                             <!--Start Slides-->
                             <div class="carousel-inner product-links-wap" role="listbox">
-                                @foreach($robot->subImages->chunk(3) as $subImageChunk)
+                                @foreach($robot->fetchAllMedia()->slice(1)->chunk(3) as $subImageChunk)
                                     <div class="carousel-item @if($loop->first) active @endif">
                                         <div class="row">
                                             @foreach($subImageChunk as $subImage)
                                                 <div class="col-4">
                                                     <a href="#">
-                                                        <img style="margin-left: 0 !important; width: 100% !important; object-fit: cover !important; max-width: 100% !important; height: 200px !important;" class="card-img img-fluid" src="{{ $subImage->image_url }}" alt="Product Image 1">
+                                                        <img style="margin-left: 0 !important; width: 100% !important; object-fit: cover !important; max-width: 100% !important; height: 200px !important;" class="card-img img-fluid" src="{{ $subImage->file_url }}" alt="Product Image 1">
                                                     </a>
                                                 </div>
                                             @endforeach
@@ -107,7 +107,7 @@
                 <div class="p-2 pb-3">
                     <div class="product-wap card rounded-0">
                         <div class="card rounded-0">
-                            <img style="width: 100% !important; margin-left: 0 !important; max-width: 100% !important; height: 430px !important; object-fit: cover !important;" class="card-img rounded-0 img-fluid" src="{{ $relatedRobot->image_url }}">
+                            <img style="width: 100% !important; margin-left: 0 !important; max-width: 100% !important; height: 430px !important; object-fit: cover !important;" class="card-img rounded-0 img-fluid" src="{{ \App\Util\Cloudinary::scaleTo($relatedRobot->fetchFirstMedia()->getFilename(), 400, 430) }}">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
                                     <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
