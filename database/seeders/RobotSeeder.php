@@ -20,16 +20,18 @@ class RobotSeeder extends Seeder
     {
         $robots = Robot::factory(5)->create();
         $robots->each(function (Robot $robot) {
-            $totalSubImage = 4;
-
-            for ($i = 0; $i < 1 + $totalSubImage; $i++) {
-                $subMedia = new Media();
-                $subMedia->file_name = $i == 0 ? self::MAIN_IMAGE_FILENAME : self::SUB_IMAGE_FILENAME;
-                $subMedia->file_url = $i == 0 ? self::MAIN_IMAGE_URL : self::SUB_IMAGE_URL;
-                $subMedia->size = 69420;
-
-                $robot->medially()->save($subMedia);
-            }
+            self::seedImage($robot, 4);
         });
+    }
+
+    public static function seedImage(Robot $robot, int $countOfSubImage) {
+        for ($i = 0; $i < 1 + $countOfSubImage; $i++) {
+            $subMedia = new Media();
+            $subMedia->file_name = $i == 0 ? self::MAIN_IMAGE_FILENAME : self::SUB_IMAGE_FILENAME;
+            $subMedia->file_url = $i == 0 ? self::MAIN_IMAGE_URL : self::SUB_IMAGE_URL;
+            $subMedia->size = 69420;
+
+            $robot->medially()->save($subMedia);
+        }
     }
 }
