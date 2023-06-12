@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" href="/assets/img/LOGO_PAJERO2.png">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/img/LOGO_PAJERO.png">
 
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/templatemo.css">
     <link rel="stylesheet" href="/assets/css/custom.css">
 
@@ -41,7 +41,7 @@
 
     <script src="/assets/js/jquery-1.11.0.min.js"></script>
     <script src="/assets/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="/assets/js/templatemo.js"></script>
     <script src="/assets/js/custom.js"></script>
 
