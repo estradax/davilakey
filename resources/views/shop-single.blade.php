@@ -1,5 +1,10 @@
 @extends('layouts.shell')
 
+@section('master.head')
+    <link rel="stylesheet" type="text/css" href="/assets/css/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/slick-theme.css">
+@endsection
+
 @section('shell.content')
 
     <!-- Open Content -->
