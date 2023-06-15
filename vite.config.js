@@ -10,6 +10,7 @@ export default defineConfig({
                 'resources/css/tailwind.css',
                 'resources/js/template/templatemo.js',
                 'resources/js/template/custom.js',
+                'resources/ts/island/navigation.tsx'
             ],
             refresh: true,
         }),
