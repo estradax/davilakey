@@ -28,10 +28,6 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/shop', [ShopController::class, 'index'])->name('shop');
-
-Route::get('/shop/{robot}', [ShopController::class, 'show'])->name('shop.show');
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

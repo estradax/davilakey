@@ -16,8 +16,8 @@ class ShopController extends Controller
         return view('shop', compact('products', 'categories'));
     }
 
-    public function show(Robot $robot) {
-        $relatedRobots = Robot::inRandomOrder()->take(12)->get();
-        return view('shop-single', compact('robot', 'relatedRobots'));
+    public function show(Product $product) {
+        $similar = Product::inRandomOrder()->take(12)->get();
+        return view('shop.show', compact('product', 'similar'));
     }
 }
