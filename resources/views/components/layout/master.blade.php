@@ -16,6 +16,6 @@
 <body class="{{ $wrapperClass ?? '' }}">
     {{ $slot }}
 
-    {{ $script ?? null }}
+    @stack('islandScripts')
 </body>
 </html>

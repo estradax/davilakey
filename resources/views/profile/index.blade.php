@@ -160,8 +160,4 @@
             </div>
         </div>
     </div>
-
-    <x-slot name="script">
-        @vite('resources/ts/island/navigation.tsx')
-    </x-slot>
 </x-layout.master>
