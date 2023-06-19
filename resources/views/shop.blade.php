@@ -40,15 +40,15 @@
                     </div>
                 </div>
                 <div class="row">
-                    @foreach($robots as $robot)
-                        <x-shop.card :$robot></x-shop.card>
+                    @foreach($products as $product)
+                        <x-shop.card :$product></x-shop.card>
                     @endforeach
                 </div>
                 <div div="row">
                     <ul class="pagination pagination-lg justify-content-end">
-                        @for($page = 1; $page < $robots->lastPage() + 1; $page++)
-                        <li @class(['page-item', 'disabled' => $robots->currentPage() === $page])>
-                            <a @class(['page-link', 'rounded-0', 'mr-3', 'shadow-sm', 'border-top-0', 'border-left-0', 'active' => $robots->currentPage() === $page]) href="{{ $robots->url($page) }}" tabindex="-1">{{ $page }}</a>
+                        @for($page = 1; $page < $products->lastPage() + 1; $page++)
+                        <li @class(['page-item', 'disabled' => $products->currentPage() === $page])>
+                            <a @class(['page-link', 'rounded-0', 'mr-3', 'shadow-sm', 'border-top-0', 'border-left-0', 'active' => $products->currentPage() === $page]) href="{{ $products->url($page) }}" tabindex="-1">{{ $page }}</a>
                         </li>
                         @endfor
                     </ul>
