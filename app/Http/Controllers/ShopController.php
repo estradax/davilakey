@@ -17,7 +17,7 @@ class ShopController extends Controller
     }
 
     public function show(Product $product) {
-        $similar = Product::inRandomOrder()->take(12)->get();
+        $similar = Product::inRandomOrder()->take(4)->get();
         return view('shop.show', compact('product', 'similar'));
     }
 }
