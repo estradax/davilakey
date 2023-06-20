@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Facades\ProductService;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -25,10 +25,6 @@ class ProductController extends Controller
         return view('product.create');
     }
 
-    protected function createFolderName(string $name) {
-        $folderName = Str::slug($name) . '_' . now()->format('dmy-his');
-        return rtrim(strtr(base64_encode($folderName), '+/', '-_'), '=');
-    }
 
     public function store(Request $request)
     {
@@ -39,7 +35,7 @@ class ProductController extends Controller
             'photo' => ['required']
         ]);
 
-        $folderName = $this->createFolderName($request->name);
+        $folderName = ProductService::createFolderName($request->name);
         $photoUrl = $request->file('photo')->store($folderName, ['disk' => 'public']);
 
         if (!$photoUrl) {
