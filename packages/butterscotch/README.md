@@ -1,0 +1,3 @@
+# Butterscotch
+
+Product CRUD service.
