@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package product;
+
+option go_package = "davilakey.com/davilakey/proto/product";
+option php_namespace = "Pb\\Product";
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+message Product {
+  uint64 id = 1;
+	string name = 2;
+  string description = 3;
+  double price = 4;
+  google.protobuf.Timestamp created_at = 5; 
+  google.protobuf.Timestamp updated_at = 6; 
+}
+
+message ProductList {
+  repeated Product data = 1;
+}
+
+message ProductCreateRequest {
+  string name = 1;
+  string description = 2;
+  double price = 3;
+}
+
+service ProductService {
+  rpc FindAll(google.protobuf.Empty) returns (ProductList);
+  rpc FindOne(google.protobuf.Empty) returns (Product);
+  rpc Create(ProductCreateRequest) returns (Product);
+}
