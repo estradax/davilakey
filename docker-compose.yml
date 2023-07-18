@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  butterscotchdb:
+    image: postgres
+    restart: always
+    ports:
+      - 4532:5432
+    environment:
+      - POSTGRES_PASSWORD=fooxbar
+      - POSTGRES_USER=butterscotchdb
