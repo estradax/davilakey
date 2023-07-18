@@ -3,14 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Http\Facades\ProductService;
+use App\Http\Facades\ProductServiceClient;
 use App\Models\Product;
+use Google\Protobuf\GPBEmpty;
 use Illuminate\Http\Request;
+use Pb\Product\ProductCreateRequest;
+use Symfony\Component\HttpFoundation\Response;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        list($response, $status) = ProductServiceClient::FindAll(new GPBEmpty())->wait();
+        if ($status->code !== \Grpc\STATUS_OK) {
+            abort(Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+
+        $products = $response->getData();
 
         return view('product.index', compact('products'));
     }
@@ -35,19 +44,15 @@ class ProductController extends Controller
             'photo' => ['required']
         ]);
 
-        $folderName = ProductService::createFolderName($request->name);
-        $photoUrl = $request->file('photo')->store($folderName, ['disk' => 'public']);
+        $productRequest = new ProductCreateRequest();
+        $productRequest->setName($request->name);
+        $productRequest->setDescription($request->description);
+        $productRequest->setPrice($request->price);
 
-        if (!$photoUrl) {
-            dd('error: photo is not stored');
+        list(, $status) = ProductServiceClient::Create($productRequest)->wait();
+        if ($status->code !== \Grpc\STATUS_OK) {
+            abort(Response::HTTP_INTERNAL_SERVER_ERROR);
         }
-
-        Product::create([
-            'name' => $request->name,
-            'price' => (double) $request->price,
-            'description' => $request->description,
-            'photo_url' => $photoUrl
-        ]);
 
         return redirect()->route('product.create');
     }

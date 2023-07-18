@@ -24,13 +24,13 @@
             @foreach($products as $product)
                 <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <td class="w-32 p-4">
-                        <img src="{{ Storage::url($product->photo_url) }}" alt="Apple Watch">
+                        <img src="https://images.unsplash.com/photo-1544117519-31a4b719223d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=752&q=80" alt="Apple Watch">
                     </td>
                     <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
-                        {{ $product->name }}
+                        {{ $product->getName() }}
                     </td>
                     <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
-                        ${{ $product->price }}
+                        ${{ $product->getPrice() }}
                     </td>
                     <td class="px-6 py-4">
                         <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Edit</a>
