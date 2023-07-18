@@ -7,7 +7,6 @@ import (
 	m "davilakey.com/davilakey/packages/butterscotch/pkg/model"
 	pb "davilakey.com/davilakey/proto/product"
 	"google.golang.org/protobuf/types/known/emptypb"
-	"google.golang.org/protobuf/types/known/timestamppb"
 	"gorm.io/gorm"
 )
 
@@ -16,6 +15,8 @@ type Server struct {
 
 	DB *gorm.DB
 }
+
+var ErrRowsAffectedIsZero = errors.New("somehow rows affected is zero")
 
 func (s *Server) FindAll(context.Context, *emptypb.Empty) (*pb.ProductList, error) {
 	var products []m.Product
@@ -31,20 +32,27 @@ func (s *Server) FindAll(context.Context, *emptypb.Empty) (*pb.ProductList, erro
 
 	var ret []*pb.Product
 	for _, v := range products {
-		product := pb.Product{
-			Id:          v.ID,
-			Name:        v.Name,
-			Description: v.Description,
-			Price:       v.Price,
-			CreatedAt:   timestamppb.New(v.CreatedAt),
-			UpdatedAt:   timestamppb.New(v.UpdatedAt),
-		}
-		ret = append(ret, &product)
+		ret = append(ret, v.Protobuf())
 	}
 
 	return &pb.ProductList{
 		Data: ret,
 	}, nil
+}
+
+func (s *Server) FindOne(_ context.Context, r *pb.ProductFindOneRequest) (*pb.Product, error) {
+	product := m.Product{ID: r.Id}
+
+	result := s.DB.Find(&product)
+	if result.Error != nil {
+		return nil, result.Error
+	}
+
+	if result.RowsAffected <= 0 {
+		return nil, ErrRowsAffectedIsZero
+	}
+
+	return product.Protobuf(), nil
 }
 
 func (s *Server) Create(_ context.Context, r *pb.ProductCreateRequest) (*pb.Product, error) {
@@ -60,17 +68,43 @@ func (s *Server) Create(_ context.Context, r *pb.ProductCreateRequest) (*pb.Prod
 	}
 
 	if result.RowsAffected <= 0 {
-		return nil, errors.New("somehow rows affected is zero")
+		return nil, ErrRowsAffectedIsZero
 	}
 
-	ret := pb.Product{
-		Id:          product.ID,
-		Name:        product.Name,
-		Description: product.Description,
-		Price:       product.Price,
-		CreatedAt:   timestamppb.New(product.CreatedAt),
-		UpdatedAt:   timestamppb.New(product.UpdatedAt),
+	return product.Protobuf(), nil
+}
+
+func (s *Server) Update(_ context.Context, r *pb.ProductUpdateRequest) (*emptypb.Empty, error) {
+	product := m.Product{
+		ID:          r.Id,
+		Name:        r.Name,
+		Description: r.Description,
+		Price:       r.Price,
 	}
 
-	return &ret, nil
+	result := s.DB.Updates(&product)
+	if result.Error != nil {
+		return nil, result.Error
+	}
+
+	if result.RowsAffected <= 0 {
+		return nil, ErrRowsAffectedIsZero
+	}
+
+	return &emptypb.Empty{}, nil
+}
+
+func (s *Server) Delete(_ context.Context, r *pb.ProductDeleteRequest) (*emptypb.Empty, error) {
+	product := m.Product{ID: r.Id}
+
+	result := s.DB.Delete(&product)
+	if result.Error != nil {
+		return nil, result.Error
+	}
+
+	if result.RowsAffected <= 0 {
+		return nil, ErrRowsAffectedIsZero
+	}
+
+	return &emptypb.Empty{}, nil
 }

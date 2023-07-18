@@ -5,4 +5,8 @@ go_library(
     srcs = ["product.go"],
     importpath = "davilakey.com/davilakey/packages/butterscotch/pkg/model",
     visibility = ["//visibility:public"],
+    deps = [
+        "//proto/product",
+        "@org_golang_google_protobuf//types/known/timestamppb",
+    ],
 )

@@ -27,8 +27,25 @@ message ProductCreateRequest {
   double price = 3;
 }
 
+message ProductFindOneRequest {
+  uint64 id = 1;
+}
+
+message ProductUpdateRequest {
+  uint64 id = 1;
+  string name = 2;
+  string description = 3;
+  double price = 4;
+}
+
+message ProductDeleteRequest {
+  uint64 id = 1;
+}
+
 service ProductService {
   rpc FindAll(google.protobuf.Empty) returns (ProductList);
-  rpc FindOne(google.protobuf.Empty) returns (Product);
+  rpc FindOne(ProductFindOneRequest) returns (Product);
   rpc Create(ProductCreateRequest) returns (Product);
+  rpc Update(ProductUpdateRequest) returns (google.protobuf.Empty);
+  rpc Delete(ProductDeleteRequest) returns (google.protobuf.Empty);
 }

@@ -23,6 +23,8 @@ const (
 	ProductService_FindAll_FullMethodName = "/product.ProductService/FindAll"
 	ProductService_FindOne_FullMethodName = "/product.ProductService/FindOne"
 	ProductService_Create_FullMethodName  = "/product.ProductService/Create"
+	ProductService_Update_FullMethodName  = "/product.ProductService/Update"
+	ProductService_Delete_FullMethodName  = "/product.ProductService/Delete"
 )
 
 // ProductServiceClient is the client API for ProductService service.
@@ -30,8 +32,10 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ProductServiceClient interface {
 	FindAll(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*ProductList, error)
-	FindOne(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*Product, error)
+	FindOne(ctx context.Context, in *ProductFindOneRequest, opts ...grpc.CallOption) (*Product, error)
 	Create(ctx context.Context, in *ProductCreateRequest, opts ...grpc.CallOption) (*Product, error)
+	Update(ctx context.Context, in *ProductUpdateRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
+	Delete(ctx context.Context, in *ProductDeleteRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 }
 
 type productServiceClient struct {
@@ -51,7 +55,7 @@ func (c *productServiceClient) FindAll(ctx context.Context, in *emptypb.Empty, o
 	return out, nil
 }
 
-func (c *productServiceClient) FindOne(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*Product, error) {
+func (c *productServiceClient) FindOne(ctx context.Context, in *ProductFindOneRequest, opts ...grpc.CallOption) (*Product, error) {
 	out := new(Product)
 	err := c.cc.Invoke(ctx, ProductService_FindOne_FullMethodName, in, out, opts...)
 	if err != nil {
@@ -69,13 +73,33 @@ func (c *productServiceClient) Create(ctx context.Context, in *ProductCreateRequ
 	return out, nil
 }
 
+func (c *productServiceClient) Update(ctx context.Context, in *ProductUpdateRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, ProductService_Update_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *productServiceClient) Delete(ctx context.Context, in *ProductDeleteRequest, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+	out := new(emptypb.Empty)
+	err := c.cc.Invoke(ctx, ProductService_Delete_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ProductServiceServer is the server API for ProductService service.
 // All implementations must embed UnimplementedProductServiceServer
 // for forward compatibility
 type ProductServiceServer interface {
 	FindAll(context.Context, *emptypb.Empty) (*ProductList, error)
-	FindOne(context.Context, *emptypb.Empty) (*Product, error)
+	FindOne(context.Context, *ProductFindOneRequest) (*Product, error)
 	Create(context.Context, *ProductCreateRequest) (*Product, error)
+	Update(context.Context, *ProductUpdateRequest) (*emptypb.Empty, error)
+	Delete(context.Context, *ProductDeleteRequest) (*emptypb.Empty, error)
 	mustEmbedUnimplementedProductServiceServer()
 }
 
@@ -86,11 +110,17 @@ type UnimplementedProductServiceServer struct {
 func (UnimplementedProductServiceServer) FindAll(context.Context, *emptypb.Empty) (*ProductList, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FindAll not implemented")
 }
-func (UnimplementedProductServiceServer) FindOne(context.Context, *emptypb.Empty) (*Product, error) {
+func (UnimplementedProductServiceServer) FindOne(context.Context, *ProductFindOneRequest) (*Product, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FindOne not implemented")
 }
 func (UnimplementedProductServiceServer) Create(context.Context, *ProductCreateRequest) (*Product, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
+}
+func (UnimplementedProductServiceServer) Update(context.Context, *ProductUpdateRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
+}
+func (UnimplementedProductServiceServer) Delete(context.Context, *ProductDeleteRequest) (*emptypb.Empty, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
 func (UnimplementedProductServiceServer) mustEmbedUnimplementedProductServiceServer() {}
 
@@ -124,7 +154,7 @@ func _ProductService_FindAll_Handler(srv interface{}, ctx context.Context, dec f
 }
 
 func _ProductService_FindOne_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(emptypb.Empty)
+	in := new(ProductFindOneRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -136,7 +166,7 @@ func _ProductService_FindOne_Handler(srv interface{}, ctx context.Context, dec f
 		FullMethod: ProductService_FindOne_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ProductServiceServer).FindOne(ctx, req.(*emptypb.Empty))
+		return srv.(ProductServiceServer).FindOne(ctx, req.(*ProductFindOneRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -159,6 +189,42 @@ func _ProductService_Create_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ProductService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ProductUpdateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServiceServer).Update(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ProductService_Update_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServiceServer).Update(ctx, req.(*ProductUpdateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ProductService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ProductDeleteRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ProductServiceServer).Delete(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: ProductService_Delete_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ProductServiceServer).Delete(ctx, req.(*ProductDeleteRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ProductService_ServiceDesc is the grpc.ServiceDesc for ProductService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -177,6 +243,14 @@ var ProductService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Create",
 			Handler:    _ProductService_Create_Handler,
+		},
+		{
+			MethodName: "Update",
+			Handler:    _ProductService_Update_Handler,
+		},
+		{
+			MethodName: "Delete",
+			Handler:    _ProductService_Delete_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
