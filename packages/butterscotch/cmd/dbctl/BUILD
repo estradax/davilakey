@@ -9,6 +9,7 @@ go_library(
         "//packages/butterscotch/pkg/model",
         "@io_gorm_driver_postgres//:postgres",
         "@io_gorm_gorm//:gorm",
+        "@io_gorm_gorm//logger",
     ],
 )
 
