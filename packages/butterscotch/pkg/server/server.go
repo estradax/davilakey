@@ -16,6 +16,13 @@ type Server struct {
 	DB *gorm.DB
 }
 
+func New(db *gorm.DB) Server {
+	return Server{
+		UnimplementedProductServiceServer: pb.UnimplementedProductServiceServer{},
+		DB:                                db,
+	}
+}
+
 var ErrRowsAffectedIsZero = errors.New("somehow rows affected is zero")
 
 func (s *Server) FindAll(context.Context, *emptypb.Empty) (*pb.ProductList, error) {
@@ -41,9 +48,9 @@ func (s *Server) FindAll(context.Context, *emptypb.Empty) (*pb.ProductList, erro
 }
 
 func (s *Server) FindOne(_ context.Context, r *pb.ProductFindOneRequest) (*pb.Product, error) {
-	product := m.Product{ID: r.Id}
+	product := m.Product{}
 
-	result := s.DB.Find(&product)
+	result := s.DB.First(&product, r.GetId())
 	if result.Error != nil {
 		return nil, result.Error
 	}
