@@ -31,12 +31,12 @@ class ProductServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @param \Google\Protobuf\GPBEmpty $argument input argument
+     * @param \Pb\Product\ProductFindOneRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function FindOne(\Google\Protobuf\GPBEmpty $argument,
+    public function FindOne(\Pb\Product\ProductFindOneRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/product.ProductService/FindOne',
         $argument,
@@ -55,6 +55,34 @@ class ProductServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/product.ProductService/Create',
         $argument,
         ['\Pb\Product\Product', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Pb\Product\ProductUpdateRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function Update(\Pb\Product\ProductUpdateRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/product.ProductService/Update',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * @param \Pb\Product\ProductDeleteRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function Delete(\Pb\Product\ProductDeleteRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/product.ProductService/Delete',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
         $metadata, $options);
     }
 

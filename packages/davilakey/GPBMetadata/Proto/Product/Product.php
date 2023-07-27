@@ -18,7 +18,7 @@ class Product
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-‰
+ç
 proto/product/product.protoproductgoogle/protobuf/timestamp.proto"ß
 Product
 
@@ -35,11 +35,25 @@ updated_at (2.google.protobuf.Timestamp"-
 ProductCreateRequest
 name (	
 description (	
-price (2π
+price ("#
+ProductFindOneRequest
+
+id ("T
+ProductUpdateRequest
+
+id (
+name (	
+description (	
+price (""
+ProductDeleteRequest
+
+id (2√
 ProductService7
-FindAll.google.protobuf.Empty.product.ProductList3
-FindOne.google.protobuf.Empty.product.Product9
-Create.product.ProductCreateRequest.product.ProductB4Z%davilakey.com/davilakey/proto/product 
+FindAll.google.protobuf.Empty.product.ProductList;
+FindOne.product.ProductFindOneRequest.product.Product9
+Create.product.ProductCreateRequest.product.Product?
+Update.product.ProductUpdateRequest.google.protobuf.Empty?
+Delete.product.ProductDeleteRequest.google.protobuf.EmptyB4Z%davilakey.com/davilakey/proto/product 
 Pb\\Productbproto3'
         , true);
 
